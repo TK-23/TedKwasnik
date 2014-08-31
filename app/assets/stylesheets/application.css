@@ -18,7 +18,7 @@
 .navbar {
   border-radius: 0px;
   border: none;
-  background: rgba(220,220,220,.7)
+  background: rgb(220,220,220)
 }
 
 .navbar > img {

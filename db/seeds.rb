@@ -44,7 +44,7 @@ Job.create([{
   highlights: "Served as a GIS subject matter expert to the US Forest Service, providing Helpdesk support and training development for the technologies which manage, analyze and visualize the agency's spatial data"
   },
   {
-  company: "Columbus Technologies and Services, Inc",
+  company: "Columbus Technologies & Services, Inc",
   location: "Salt Lake City, Utah",
   start_date: "2012/05/21",
   end_date: "2013/05/24",

@@ -1,98 +1,120 @@
+<div id="tabs" class="resume container-fluid" ng-app="MyResume">
+<div class="row" ng-controller="ResumeController">
 
-<div class="resume container-fluid">
-
-<div class="education row">
-  <div class="col-xs-10 col-xs-offset-1">
-  <h1>Education</h1>
-  <% @schools.each do |school|%>
-    <div class="info_container row">
-
-      <div class="col-xs-1">
-        <%= image_tag school.image_path%>
-      </div>
-
-      <div class="col-xs-3">
-          <h3><%= school.name %></h3><br>
-          <h5><%= school.location %></h5><br>
-          <%=  school.start_date.strftime("%B %Y") %> - <%= school.end_date.strftime("%B %Y") %>
-      </div>
-
-      <div class="info_title col-xs-8">
-        <%= school.degree %>
-        <div class="additional_info">
-          <%= raw school.additional_info %>
-        </div>
-      </div>
-
-    </div>
-  <% end %>
-</div>
-
-<div class="experience row">
-  <div class="col-xs-10 col-xs-offset-1">
-  <h1>Experience</h1>
-  <% @jobs.each do |job|%>
-  <div class="info_container row">
-      <div class="col-xs-2">
-        <%= image_tag job.company_logo%>
-      </div>
-
-      <div class="col-xs-4">
-        <h4> <%= job.company %></h4><br>
-        <h6> <%= job.location %><br>
-        <span class="no_bold"><%=  job.start_date.strftime("%B %Y") %> - <%= job.end_date.strftime("%B %Y") %></span></h6>
-      </div>
-
-      <div class="col-xs-6">
-        <div class="info_title"><%= job.title %></div><br>
-        <%= job.highlights %>
-      </div>
-  </div>
-  <% end %>
-  </div>
-</div>
-
-<div class="it_skills row">
-  <div class="col-xs-10 col-xs-offset-1">
-    <h1>Information Technology Skills</h1>
-
-    <div class="info_container row">
-    <% @expertise_areas.each do |area|%>
-    <div class="col-xs-4">
-      <h4><%= area.name %></h4><br>
-      <ul>
-        <% area.skills.each do |skill| %>
-          <li><%= skill.name %>
-              <ul>
-              <% skill.skill_specifics.each do |detail|%>
-                <li><%= detail.description %></li>
-              <% end %>
-              </ul>
-          </li>
-        <% end %>
+  <div class="sidebar">
+  <div class="col-xs-2">
+    <div id="filters" class="filters">
+      <ul ui-sortable ng-model="sections" class="nav nav-pills nav-stacked">
+        <li ng-repeat="section in sections">
+          <a href="">
+          {{section.name}}
+            <i ng-click="toggleVisibility( section )" ng-class="{true: 'fa fa-toggle-off', false: 'fa fa-toggle-on'}[section.hide]"></i>
+          </a>
+        </li>
       </ul>
-    </div>
-    <% end %>
+      <span class="aside"> ( Drag and drop sections to reorder ) </span>
     </div>
   </div>
-</div>
+  </div>
 
-<div class="additional row">
-  <div class="col-xs-10 col-xs-offset-1">
-  <h1>Additional</h1>
-  <% @additional_details.each do |additional| %>
-  <div class="info_container other row">
-    <div class="col-xs-4">
-      <h4><%= additional.name %></h4><br>
-    </div>
-     <div class="info_group col-xs-8">
-     <%= raw additional.description %>
-     </div>
-  </div>
-  <% end %>
-  </div>
-</div>
 
+  <div class="col-xs-9 col-xs-offset-2 main_page">
+
+    <ul>
+      <li ng-repeat="section in sections">
+        <div class="row info_collection" ng-hide="section.hide">
+          <div class="col-xs-11">
+          <h1>{{section.name}}</span></h1>
+
+          <div ng-if="section.name == 'Education'">
+          <% @schools.each do |school|%>
+            <div class="info_container row">
+
+            <div class="col-xs-1">
+              <%= image_tag school.image_path%>
+            </div>
+
+            <div class="col-xs-4">
+              <h4><%= school.name %></h4><br>
+              <h5><%= school.location %></h5><br>
+              <span class="no_bold"><%=  school.start_date.strftime("%B %Y") %> - <%= school.end_date.strftime("%B %Y") %></span>
+            </div>
+
+            <div class="info_title col-xs-7">
+              <%= school.degree %>
+              <div class="additional_info">
+                <%= raw school.additional_info %>
+              </div>
+            </div>
+
+            </div>
+          <% end %>
+          </div>
+
+          <div ng-if="section.name == 'Experience'">
+          <% @jobs.each do |job|%>
+            <div class="info_container row">
+              <div class="col-xs-2">
+                <%= image_tag job.company_logo%>
+              </div>
+
+              <div class="col-xs-4">
+                <h5> <%= job.company %></h5><br>
+                <h6> <%= job.location %><br>
+                <span class="no_bold"><%=  job.start_date.strftime("%B %Y") %> - <%= job.end_date.strftime("%B %Y") %></span></h6>
+              </div>
+
+              <div class="col-xs-6">
+                <h4><%= job.title %></h4><br>
+                <span class="no_bold"><%= job.highlights %></span>
+              </div>
+            </div>
+          <% end %>
+          </div>
+
+          <div ng-if="section.name == 'Skill Sets'">
+          <div class="info_container row">
+            <% @expertise_areas.each do |area|%>
+            <div class="col-xs-4">
+              <h4><%= area.name %></h4><br>
+              <ul>
+                <% area.skills.each do |skill| %>
+                  <li><%= skill.name %>
+                      <ul>
+                      <% skill.skill_specifics.each do |detail|%>
+                        <li><%= detail.description %></li>
+                      <% end %>
+                      </ul>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
+          </div>
+          </div>
+
+          <div ng-if="section.name == 'Additional'">
+          <% @additional_details.each do |additional| %>
+            <div class="info_container other row">
+              <div class="col-xs-2">
+                <h4><%= additional.name %></h4><br>
+              </div>
+               <div class="info_group col-xs-8">
+               <%= raw additional.description %>
+               </div>
+            </div>
+          <% end %>
+          </div>
+
+          <div ng-if="section.name == 'Map'">
+            <div class="map row info_collection" id="resume_map" ng-hide="sections[4].hide"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
 </div>
 
 
