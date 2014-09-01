@@ -5,7 +5,9 @@ class AddSchoolTable < ActiveRecord::Migration
       t.string :location
       t.date :start_date
       t.date :end_date
+      t.string :date_note
       t.string :degree
+      t.string :status
       t.text :additional_info
       t.string :image_path
       t.timestamps

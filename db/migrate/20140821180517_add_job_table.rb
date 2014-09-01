@@ -7,6 +7,7 @@ class AddJobTable < ActiveRecord::Migration
       t.date :end_date
       t.string :company_logo
       t.string :title
+      t.string :status
       t.text :highlights
       t.timestamps
     end
