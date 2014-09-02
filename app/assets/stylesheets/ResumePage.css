@@ -108,6 +108,17 @@
   border-radius: 3px;
 }
 
+.list > li {
+  margin-left: 1em;
+  font-weight: bold;
+}
+
+.list > li > ul > li {
+  margin-left: 1em;
+  font-weight: normal;
+}
+
+
 .no_bold {
   font-weight: normal;
 }
@@ -117,6 +128,7 @@
   display: inline-block;
   margin: .5em 0 .25em 0;
 }
+
 .switch {
   margin: .5em 0 .5em 0;
   color: rgb(220,220,220);
@@ -134,18 +146,9 @@ ul {
   padding:0;
 }
 
-ul > li {
-  font-weight: bold;
-}
-
 h1, h2, h3, h4, h5, h6 {
   display: inline;
 }
-
-ul > li > ul > li {
-  font-weight: normal;
-}
-
 
 
 

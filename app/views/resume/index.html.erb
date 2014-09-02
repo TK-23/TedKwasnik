@@ -8,8 +8,8 @@
       <ul ng-model="sections" class="nav nav-pills nav-stacked">
         <div class ="toc_header"><h2 class="header_font">Sections</span></h2></div>
         <li ng-repeat="section in sections">
-          <a href="" scroll-to-item scroll-to={{section.name}}>
-          {{section.name}}
+          <a href="" scroll-to-item scroll-to={{section.name}}><b>
+          {{section.name}}</b>
           </a>
             <i ng-click="toggleVisibility( section )" ng-class="{true: 'switch fa fa-toggle-off', false: 'switch fa fa-toggle-on'}[section.hide]"></i>
         </li>
@@ -125,7 +125,7 @@
             <% @expertise_areas.each do |area|%>
             <div class="col-xs-6">
               <h4 class="header_font"><%= area.name %></h4><br>
-              <ul>
+              <ul class="list">
                 <% area.skills.each do |skill| %>
                   <li><%= skill.name %>
                       <ul ng-show="levelOfDetail != 'Min'">
@@ -147,7 +147,7 @@
               <div class="col-xs-2">
                 <h4 class="header_font"><%= additional.name %></h4><br>
               </div>
-               <div class="info_group col-xs-8">
+               <div class="info_group col-xs-8 no_bold">
                <%= raw additional.description %>
                </div>
             </div>
