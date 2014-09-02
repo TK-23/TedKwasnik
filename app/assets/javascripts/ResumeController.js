@@ -1,4 +1,4 @@
-app.controller("ResumeController", function($scope) {
+app.controller("ResumeController", ['$scope', function($scope) {
     $scope.sections = [
       { name:'Education', hide: false, filter: "Full-time" },
       { name:'Experience', hide: false, filter: "Full-time" },
@@ -34,4 +34,4 @@ app.controller("ResumeController", function($scope) {
       $scope.levelOfDetail = level;
     };
 
-});
+}]);
