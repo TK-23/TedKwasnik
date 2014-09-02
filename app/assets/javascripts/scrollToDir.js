@@ -1,4 +1,4 @@
-app.directive('scrollToItem', ['',function() {
+app.directive('scrollToItem', function() {
     return {
         restrict: 'A',
         scope: {
@@ -11,4 +11,4 @@ app.directive('scrollToItem', ['',function() {
 
         })
         }
-    }}])
+    }})
