@@ -1,17 +1,8 @@
-.body_div {
-  height: 100%;
-  width: 100%;
-}
-
-.profile_image > img {
-  width: 100%;
-  box-shadow: 0px 0px 5px #888888;
-}
-
 .cover_photo > img {
   width: 100%;
   position: fixed;
   top:0;
+  min-width: 800px;
 }
 
 .cover_label {
@@ -32,6 +23,11 @@
   background: white;
   box-shadow: 0px 0px 5px #888888;
   padding: 20px;
+}
+
+.welcome_body > div > div {
+  border-bottom: 2pt solid rgb(220,220,220);
+  padding: 2em;
 }
 
 .contact_container {
