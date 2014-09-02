@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'font-awesome-sass'
 gem 'modernizr-rails'
-gem "jquery-rails"
 gem 'jquery-ui-rails'
 gem 'skrollr-rails'
 
