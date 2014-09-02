@@ -6,7 +6,7 @@
     <div id="filters" class="filters">
 
       <ul ng-model="sections" class="nav nav-pills nav-stacked">
-        <div class ="toc_header"><h1 class="header_font">Sections</span></h1></div>
+        <div class ="toc_header"><h2 class="header_font">Sections</span></h2></div>
         <li ng-repeat="section in sections">
           <a href="" scroll-to-item scroll-to={{section.name}}>
           {{section.name}}
@@ -16,7 +16,7 @@
       </ul>
 
       <ul class="nav nav-pills nav-stacked">
-        <div class ="toc_header"><h1 class="header_font">Filters</span></h1></div>
+        <div class ="toc_header"><h2 class="header_font">Filters</span></h2></div>
         <li><a href="">Level of Detail</a>
         <div ng-model="levelsOfDetail"class="detail btn-group-vertical">
           <button

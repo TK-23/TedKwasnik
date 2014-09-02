@@ -6,6 +6,7 @@
 }
 
 .sidebar {
+  min-width: 150px;
   margin-top: -4em;
   background: rgba(145,18,18,1);
   background: -moz-linear-gradient(left, rgba(145,18,18,1) 0%, rgba(168,50,37,1) 24%, rgba(156,12,12,1) 43%, rgba(240,80,62,1) 79%, rgba(138,32,22,1) 100%);
