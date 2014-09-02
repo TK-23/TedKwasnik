@@ -57,15 +57,16 @@
 }
 
 .info_header_line {
+  margin-top: 5em;
   text-align: center;
   height: 1.5px;
   background: black;
 }
 
 .info_header > div > h1 {
+  padding: .5em;
+  margin-top: -3em;
   background: white;
-  margin: -4em;
-  padding: 1em;
 }
 
 .toc_header {
@@ -76,6 +77,21 @@
 
 .detail {
   margin: 0em 0 0 2em;
+}
+
+.min_detail {
+  text-align: center;
+  height: 150px;
+}
+
+.min_image {
+  width: 100px;
+  height: 100px;
+}
+
+.min_image > img {
+  margin-left: 44px;
+  margin-top: 25px;
 }
 
 .info_container {
@@ -100,7 +116,8 @@
   margin: .5em 0 .25em 0;
 }
 .fa {
-  margin: .5em;
+  margin: .5em 0 .5em 0;
+  color: rgb(220,220,220);
 }
 
 .aside {

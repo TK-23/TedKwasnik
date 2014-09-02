@@ -1,1 +1,1 @@
-var app = angular.module("MyResume", ['ui.sortable'])
+var app = angular.module("MyResume", [])

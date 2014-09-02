@@ -2,7 +2,7 @@ app.controller("ResumeController", function($scope) {
     $scope.sections = [
       { name:'Education', hide: false, filter: "Full-time" },
       { name:'Experience', hide: false, filter: "Full-time" },
-      { name:'Skill Sets', hide: false },
+      { name:'Skills', hide: false },
       { name:'Additional', hide: false },
       { name:'Map', hide: false } ];
 

@@ -18,7 +18,7 @@
 .navbar {
   border-radius: 0px;
   border: none;
-  background: rgb(220,220,220);
+  background: rgb(120,120,120);
   box-shadow: 0px 0px 10px #000000;
 }
 
@@ -26,12 +26,37 @@
   width: 100%;
 }
 
-.nav > li > a {
+.header_link {
   margin: 0 1em;
+  color: white;
+  font-family: 'News Cycle', sans-serif;
+  float: right;
+  display: inline-block;
+}
+
+.header_link:hover {
+  color: black;
+}
+
+.navbar-header {
+  margin-top: -.5em;
+}
+
+.title {
+  color:  #FFA319;
+  text-shadow: 0px 0px 4px rgb(0,0,0);
+}
+
+.title_font {
+  font-family: 'Patua One', cursive;
 }
 
 img {
   width: 100%;
+}
+
+.right {
+  float: right;
 }
 
 

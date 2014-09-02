@@ -15,6 +15,5 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require angular
-//= require sortable
 //= require bootstrap.min
 //= require_tree .

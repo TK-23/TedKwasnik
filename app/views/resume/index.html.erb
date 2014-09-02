@@ -5,21 +5,20 @@
   <div class="col-xs-2">
     <div id="filters" class="filters">
 
-      <ul ui-sortable ng-model="sections" class="nav nav-pills nav-stacked">
+      <ul ng-model="sections" class="nav nav-pills nav-stacked">
         <div class ="toc_header"><h1 class="header_font">Sections</span></h1></div>
         <li ng-repeat="section in sections">
-          <a href="">
+          <a href="" scroll-to-item scroll-to={{section.name}}>
           {{section.name}}
-            <i ng-click="toggleVisibility( section )" ng-class="{true: 'fa fa-toggle-off', false: 'fa fa-toggle-on'}[section.hide]"></i>
           </a>
+            <i ng-click="toggleVisibility( section )" ng-class="{true: 'fa fa-toggle-off', false: 'fa fa-toggle-on'}[section.hide]"></i>
         </li>
       </ul>
-      <span class="aside"> ( Drag and drop sections to reorder ) </span>
 
-      <ul ui-sortable ng-model="sections" class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills nav-stacked">
         <div class ="toc_header"><h1 class="header_font">Filters</span></h1></div>
         <li><a href="">Level of Detail</a>
-        <div ng-model="levelsOfDetail"class="detail btn-group">
+        <div ng-model="levelsOfDetail"class="detail btn-group-vertical">
           <button
             ng-repeat="level in levelsOfDetail"
             ng-class="{'true': 'active'}[levelOfDetail == level]"
@@ -37,11 +36,10 @@
   </div>
 
 
-  <div class="col-xs-9 col-xs-offset-2 main_page">
-
+  <div class="col-xs-9 col-xs-offset-2 main_page" id="main_page">
     <ul>
-      <li ng-repeat="section in sections">
-        <div class="row info_collection" ng-hide="section.hide">
+      <li ng-repeat="section in sections" id={{section.name}}>
+        <div class="row info_collection" ng-hide="section.hide" >
           <div class="col-xs-11">
 
           <div class="info_header">
@@ -58,7 +56,7 @@
           </ul>
 
           <% @schools.each do |school|%>
-            <div class="info_container row" ng-show="section.filter == '<%= school.status%>' || section.filter == 'All' " >
+            <div class="info_container row" ng-show="( section.filter == '<%= school.status%>' || section.filter == 'All' ) && levelOfDetail != 'Min'" >
 
             <div class="col-xs-2">
               <%= image_tag school.image_path%>
@@ -78,6 +76,14 @@
             </div>
 
             </div>
+
+            <div ng-show="(section.filter == '<%= school.status%>' || section.filter == 'All')  && levelOfDetail == 'Min'" class="col-xs-3 min_detail">
+            <div class="min_image"><%= image_tag school.image_path%></div>
+            <div class="min_text"><h5 class="header_font"><%= school.name %></h5><br>
+            <%= school.degree %></div>
+
+
+            </div>
           <% end %>
           </div>
 
@@ -88,7 +94,7 @@
             <li ng-class="{'All': 'active'}[section.filter]" ng-click="toggleFilter( section, 'All' )"><a href="">All</a></li>
           </ul>
           <% @jobs.each do |job|%>
-            <div class="info_container row" ng-show="section.filter == '<%= job.status%>' || section.filter == 'All' ">
+            <div class="info_container row" ng-show="( section.filter == '<%= job.status %>' || section.filter == 'All' ) && levelOfDetail != 'Min' ">
               <div class="col-xs-2">
                 <%= image_tag job.company_logo%>
               </div>
@@ -104,10 +110,17 @@
                 <span class="no_bold"><%= job.highlights %></span>
               </div>
             </div>
+
+            <div ng-show="(section.filter == '<%= job.status%>' || section.filter == 'All')  && levelOfDetail == 'Min'" class="col-xs-3 min_detail">
+            <div class="min_image"><%= image_tag job.company_logo%></div>
+            <div class="min_text"><h5 class="header_font"><%= job.company %></h5><br>
+            <%= job.title %></div>
+            </div>
+
           <% end %>
           </div>
 
-          <div ng-if="section.name == 'Skill Sets'">
+          <div ng-if="section.name == 'Skills'">
           <div class="info_container row">
             <% @expertise_areas.each do |area|%>
             <div class="col-xs-6">
@@ -115,7 +128,7 @@
               <ul>
                 <% area.skills.each do |skill| %>
                   <li><%= skill.name %>
-                      <ul>
+                      <ul ng-show="levelOfDetail != 'Min'">
                       <% skill.skill_specifics.each do |detail|%>
                         <li><%= detail.description %></li>
                       <% end %>
