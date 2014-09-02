@@ -59,7 +59,7 @@
             <div class="info_container row" ng-show="( section.filter == '<%= school.status%>' || section.filter == 'All' ) && levelOfDetail != 'Min'" >
 
             <div class="col-xs-2">
-              <%= image_tag school.image_path%>
+              <img src="<%=school.image_path%>">
             </div>
 
             <div class="col-xs-4">
@@ -96,7 +96,7 @@
           <% @jobs.each do |job|%>
             <div class="info_container row" ng-show="( section.filter == '<%= job.status %>' || section.filter == 'All' ) && levelOfDetail != 'Min' ">
               <div class="col-xs-2">
-                <%= image_tag job.company_logo%>
+                <img src="<%=job.company_logo%>">
               </div>
 
               <div class="col-xs-4">

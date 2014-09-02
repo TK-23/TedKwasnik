@@ -15,7 +15,7 @@ School.create([{
   degree: "M.S. in Civil & Environmental Engineering, Atmosphere/Energy focus",
   status: "Full-time",
   additional_info: "",
-  image_path: "stanford_logo.png" },
+  image_path: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/stanford_logo.png" },
 
   {
   name: "UCLA Extension",
@@ -24,7 +24,7 @@ School.create([{
   end_date: "2013/03/27",
   degree: "Introduction to Statistics and Quantitative Methods",
   status: "Part-time",
-  image_path: "ucla_logo.jpeg" },
+  image_path: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/ucla_logo.jpeg" },
 
   {
   name: "Middlebury College",
@@ -34,7 +34,7 @@ School.create([{
   degree: "Joint B.A. in Environmental Studies and Geography, French minor",
   status: "Full-time",
   additional_info: "Senior Thesis: <a href=\"/thesis\">The Grocery Gap: Examining Food Access in US Cities</a>",
-  image_path: "middlebury_logo.png" },
+  image_path: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/middlebury_logo.png" },
 
   {
   name: "Universite de Paris 1",
@@ -44,7 +44,7 @@ School.create([{
   degree: "French Immersion Program with coursework conducted in French",
   status: "Part-time",
   additional_info: "",
-  image_path: "universite_paris_1_logo.jpeg" }]
+  image_path: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/universite_paris_1_logo.jpeg" }]
 )
 
 Job.create([{
@@ -52,7 +52,7 @@ Job.create([{
   location: "Boston, MA",
   start_date: "2014/05/01",
   end_date: "2014/07/18",
-  company_logo: "launch_academy_logo.png",
+  company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/launch_academy_logo.png",
   title: "Junior Web Developer",
   status: "Full-time",
   highlights: "Achieved proficiency as a junior sofware engineer through a 10-week immersive bootcamp"
@@ -62,7 +62,7 @@ Job.create([{
   location: "Salt Lake City, Utah",
   start_date: "2013/06/01",
   end_date: "2014/04/14",
-  company_logo: "gci-logo.png",
+  company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/gci-logo.png",
   title: "GIS Analyst",
   status: "Full-time",
   highlights: "Served as a GIS subject matter expert to the US Forest Service, providing Helpdesk support and training development for the technologies which manage, analyze and visualize the agency's spatial data"
@@ -72,7 +72,7 @@ Job.create([{
   location: "Salt Lake City, Utah",
   start_date: "2012/05/21",
   end_date: "2013/05/24",
-  company_logo: "columbus_logo.jpeg",
+  company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/columbus_logo.jpeg",
   title: "GIS Specialist",
   status: "Full-time",
   highlights: "Delivered onsite technical GIS support to the US Forest Service’s Geospatial Services and Technology Center and produced training sessions to educate users on emerging desktop and web GIS technologies"
@@ -82,7 +82,7 @@ Job.create([{
   location: "Norwell, Massachusetts",
   start_date: "2012/05/22",
   end_date: "2013/05/31",
-  company_logo: "cnc_logo.jpeg",
+  company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/cnc_logo.jpeg",
   title: "Project Engineer (Part-time)",
   status: "Part-time",
   highlights: "Maintained and updated custom Python-based toolsets"
@@ -92,7 +92,7 @@ Job.create([{
   location: "Norwell, Massachusetts",
   start_date: "2009/12/07",
   end_date: "2012/05/07",
-  company_logo: "cnc_logo.jpeg",
+  company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/cnc_logo.jpeg",
   title: "Project Engineer",
   status: "Full-time",
   highlights: "Developed and trained users on custom Python-based tools to automate human and environmental risk analysis posed by oil and gas pipelines, and customized algorithms to fulfill client needs"
@@ -102,7 +102,7 @@ Job.create([{
   location: "Newtown, Massachusetts",
   start_date: "2009/12/01",
   end_date: "2011/05/01",
-  company_logo: "summit_logo.png",
+  company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/summit_logo.png",
   title: "SAT Tutor",
   status: "Part-time",
   highlights: "Instructed groups of high-school students in the subjects and test-taking strategies critical to success on the SAT"
@@ -112,7 +112,7 @@ Job.create([{
   location: "Boston, Massachusetts",
   start_date: "2009/08/01",
   end_date: "2009/11/20",
-  company_logo: "boston_logo.png",
+  company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/boston_logo.png",
   title: "GIS Intern",
   status: "Part-time",
   highlights: "Developed statistical models to assess accessibility to Parks and Recreation for the city's Open Space Plan"
@@ -122,7 +122,7 @@ Job.create([{
   location: "Middlebury, Vermont",
   start_date: "2009/01/01",
   end_date: "2009/05/01",
-  company_logo: "middlebury_logo.png",
+  company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/middlebury_logo.png",
   title: "GIS Lab Monitor",
   status: "Part-time",
   highlights: "Provided technical support to students in GIS and Cartography classes"
