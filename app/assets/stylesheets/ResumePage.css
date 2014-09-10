@@ -83,17 +83,15 @@
 
 .min_detail {
   text-align: center;
-  height: 150px;
+  margin-top: 3em;
 }
 
 .min_image {
-  width: 100px;
-  height: 100px;
+  position:relative; padding-bottom:50px;width: 50%;
 }
 
 .min_image > img {
-  margin-left: 44px;
-  margin-top: 25px;
+  position:absolute; bottom:0;
 }
 
 .info_container {
@@ -118,11 +116,6 @@
   font-weight: normal;
 }
 
-
-.no_bold {
-  font-weight: normal;
-}
-
 .header_font {
   font-family: 'Libre Baskerville', serif;
   display: inline-block;
@@ -140,15 +133,7 @@
   color: rgb(180,180,180)
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding:0;
-}
 
-h1, h2, h3, h4, h5, h6 {
-  display: inline;
-}
 
 
 
