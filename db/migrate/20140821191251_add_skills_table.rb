@@ -1,6 +1,6 @@
-class AdditionalDetails < ActiveRecord::Migration
+class AddSkillsTable < ActiveRecord::Migration
   def change
-    create_table :additional_details do |t|
+    create_table :skills do |t|
       t.string :name
       t.text :description
       t.timestamps

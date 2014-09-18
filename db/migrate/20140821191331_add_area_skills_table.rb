@@ -1,4 +1,4 @@
-class AreaSkills < ActiveRecord::Migration
+class AddAreaSkillsTable < ActiveRecord::Migration
   def change
     create_table :area_skills do |t|
       t.integer :expertise_area_id

@@ -1,4 +1,4 @@
-class SkillSpecifics < ActiveRecord::Migration
+class AddSkillSpecificsTable < ActiveRecord::Migration
   def change
     create_table :skill_specifics do |t|
       t.integer :skill_id

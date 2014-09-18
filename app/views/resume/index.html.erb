@@ -64,7 +64,7 @@
 
             <div class="col-xs-4">
               <h4 class="header_font"><%= school.name %></h4><br>
-              <h4><%= school.location %></h4><br>
+              <h4><%= school.location.name %></h4><br>
               <span class="no_bold"><%=  school.start_date.strftime("%B %Y") %> - <%= raw "#{school.end_date.strftime("%B %Y")} <em>#{school.date_note}</em>" %></span>
             </div>
 
@@ -100,8 +100,8 @@
               </div>
 
               <div class="col-xs-4">
-                <h4 class="header_font"> <%= job.company %></h4><br>
-                <h4> <%= job.location %></h4><br>
+              <h4 class="header_font"> <%= job.company %></h4><br>
+                <h4> <%= job.location.name %></h4><br>
                 <span class="no_bold"><%=  job.start_date.strftime("%B %Y") %> - <%= job.end_date.strftime("%B %Y") %></span>
               </div>
 
@@ -154,8 +154,34 @@
           <% end %>
           </div>
 
-          <div ng-if="section.name == 'Map'">
-            <div class="map row info_collection" id="resume_map" ng-hide="sections[4].hide"></div>
+        <div ng-if="section.name == 'Places'">
+          <div class="info_container other row">
+            <div class="row">
+              <div class="col-xs-10 col-xs-offset-1">
+                <mapbox id="resume_map" map-id="tkbrewski.idmej055" zoom="2" lat="38.117" lng="-97.141" width="100%" height="500px">
+                <% @map_points.each do |point|%>
+                  <marker lat="<%= point[:geom].y %>" lng="<%= point[:geom].x %>" size="medium" color="#901212" symbol="college">
+                     <% point[:info].each do |info|%>
+                       <div class="popup">
+                          <div class="info_container row">
+                            <div class="col-xs-2">
+                              <i style="font-size: 16pt;" class="fa <%= info[:type] == "job" ? "fa-briefcase" : "fa-university" %>"></i>
+                            </div>
+
+                            <div class="col-xs-10">
+                              <h1> <%= info[:name] %> </h1>
+                              <p><em> <%= info[:purpose] %></em></p>
+                              <%= info[:date] %>
+                            </div>
+                          </div>
+                        </div>
+                      <% end %>
+
+                  </marker>
+                <% end %>
+                </mapbox>
+              </div>
+            </div>
           </div>
         </div>
       </li>

@@ -3,7 +3,8 @@ app.controller("ResumeController", ['$scope', function($scope) {
       { name:'Education', hide: false, filter: "Full-time" },
       { name:'Experience', hide: false, filter: "Full-time" },
       { name:'Skills', hide: false },
-      { name:'Additional', hide: false }];
+      { name:'Additional', hide: false },
+      { name:'Places', hide: false }];
 
     $scope.toggleVisibility = function(section) {
       for(var i = 0; i < $scope.sections.length; i++) {

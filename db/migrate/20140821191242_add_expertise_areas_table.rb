@@ -1,6 +1,6 @@
-class Skills < ActiveRecord::Migration
+class AddExpertiseAreasTable < ActiveRecord::Migration
   def change
-    create_table :skills do |t|
+   create_table :expertise_areas do |t|
       t.string :name
       t.text :description
       t.timestamps

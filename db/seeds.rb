@@ -6,9 +6,103 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+Location.create([
+  { name: "Stanford, CA",
+    description:"",
+    address1: "450 Serra Mall",
+    city:"Stanford",
+    state:"CA",
+    zip:"94305",
+    country:"USA",
+    location_type_id: 1
+  },
+  { name: "Middlebury, VT",
+    description:"",
+    address1: "14 Old Chapel Rd",
+    city:"Middlebury",
+    state:"VT",
+    zip:"05753",
+    country:"USA",
+    location_type_id: 1
+  },
+  { name: "Paris, France",
+    description:"",
+    address1: "17 Rue de Tolbiac",
+    city:"Paris",
+    state:"",
+    zip:"",
+    country:"France",
+    location_type_id: 1
+  },
+  { name: "Online",
+    description:"",
+    address1: "10995 Le Conte Ave",
+    city:"Los Angeles",
+    state:"CA",
+    zip:"90095",
+    country:"USA",
+    location_type_id: 1
+  },
+  { name: "Norwell, MA",
+    description:"",
+    address1: "101 Accord Park Drive",
+    city:"Norwell",
+    state:"MA",
+    zip:"02061",
+    country:"USA",
+    location_type_id: 2
+  },
+  { name: "Boston, MA",
+    description:"",
+    address1: "1010 Massachusetts Ave",
+    city:"Boston",
+    state:"MA",
+    zip:"02118",
+    country:"USA",
+    location_type_id: 2
+  },
+  { name: "Boston, MA",
+    description:"",
+    address1: "33 Harrison Ave",
+    address2:"#501",
+    city:"Boston",
+    state:"MA",
+    zip:"02111",
+    country:"USA",
+    location_type_id: 2
+  },
+  { name: "Salt Lake City, UT",
+    description:"",
+    address1: "2222 W 2300 S",
+    city:"Salt Lake City",
+    state:"UT",
+    zip:"84119",
+    country:"USA",
+    location_type_id: 2
+  },
+  { name: "Newton, MA",
+    description:"",
+    address1: "90 Bridge St",
+    address2: "#200",
+    city:"Newton",
+    state:"MA",
+    zip:"02458",
+    country:"USA",
+    location_type_id: 2
+  }
+  ])
+
+LocationType.create([
+  { name:"School",
+    description:"" },
+  { name:"Job",
+    description:"" }
+    ])
+
 School.create([{
   name: "Stanford University",
-  location: "Stanford, California",
+  location_id: 1,
   start_date: "2014/09/22",
   end_date: "2016/01/01",
   date_note: "[expected]",
@@ -19,16 +113,16 @@ School.create([{
 
   {
   name: "UCLA Extension",
-  location: "Online",
+  location_id: 4,
   start_date: "2013/01/09",
   end_date: "2013/03/27",
-  degree: "Introduction to Statistics and Quantitative Methods",
+  degree: "Introduction to Statistics and Quantitative Methods (Online)",
   status: "Part-time",
   image_path: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/ucla_logo.jpeg" },
 
   {
   name: "Middlebury College",
-  location: "Middlebury, Vermont",
+  location_id: 2,
   start_date: "2005/09/01",
   end_date: "2009/05/01",
   degree: "Joint B.A. in Environmental Studies and Geography, French minor",
@@ -38,7 +132,7 @@ School.create([{
 
   {
   name: "Universite de Paris 1",
-  location: "Paris, France",
+  location_id: 3,
   start_date: "2007/09/01",
   end_date: "2007/12/31",
   degree: "French Immersion Program with coursework conducted in French",
@@ -49,7 +143,7 @@ School.create([{
 
 Job.create([{
   company: "Launch Academy",
-  location: "Boston, MA",
+  location_id: 7,
   start_date: "2014/05/01",
   end_date: "2014/07/18",
   company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/launch_academy_logo.png",
@@ -59,7 +153,7 @@ Job.create([{
   },
   {
   company: "Global Consulting International",
-  location: "Salt Lake City, Utah",
+  location_id: 8,
   start_date: "2013/06/01",
   end_date: "2014/04/14",
   company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/gci-logo.png",
@@ -69,7 +163,7 @@ Job.create([{
   },
   {
   company: "Columbus Technologies & Services, Inc",
-  location: "Salt Lake City, Utah",
+  location_id: 8,
   start_date: "2012/05/21",
   end_date: "2013/05/24",
   company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/columbus_logo.jpeg",
@@ -79,7 +173,7 @@ Job.create([{
   },
   {
   company: "Coler & Colantonio, Inc",
-  location: "Norwell, Massachusetts",
+  location_id: 5,
   start_date: "2012/05/22",
   end_date: "2013/05/31",
   company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/cnc_logo.jpeg",
@@ -89,7 +183,7 @@ Job.create([{
   },
   {
   company: "Coler & Colantonio, Inc",
-  location: "Norwell, Massachusetts",
+  location_id: 5,
   start_date: "2009/12/07",
   end_date: "2012/05/07",
   company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/cnc_logo.jpeg",
@@ -99,7 +193,7 @@ Job.create([{
   },
   {
   company: "Summit Educational Group",
-  location: "Newtown, Massachusetts",
+  location_id: 9,
   start_date: "2009/12/01",
   end_date: "2011/05/01",
   company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/summit_logo.png",
@@ -109,7 +203,7 @@ Job.create([{
   },
   {
   company: "Boston Parks & Recreation Deparment",
-  location: "Boston, Massachusetts",
+  location_id: 6,
   start_date: "2009/08/01",
   end_date: "2009/11/20",
   company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/boston_logo.png",
@@ -119,7 +213,7 @@ Job.create([{
   },
   {
   company: "Middlebury College",
-  location: "Middlebury, Vermont",
+  location_id: 2,
   start_date: "2009/01/01",
   end_date: "2009/05/01",
   company_logo: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/middlebury_logo.png",

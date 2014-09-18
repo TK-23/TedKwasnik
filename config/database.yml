@@ -1,5 +1,5 @@
 development:
-  adapter: postgresql
+  adapter: postgis
   encoding: utf8
   database: TedKwasnik_development
   pool: 5
@@ -7,7 +7,7 @@ development:
   password:
 
 test:
-  adapter: postgresql
+  adapter: postgis
   encoding: utf8
   database: TedKwasnik_test
   pool: 5
@@ -15,7 +15,7 @@ test:
   password:
 
 production:
-  adapter: postgresql
+  adapter: postgis
   encoding: utf8
   database: TedKwasnik_production
   pool: 5

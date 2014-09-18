@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821202000) do
+ActiveRecord::Schema.define(version: 20140916012457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "additional_details", force: true do |t|
     t.string   "name"
@@ -39,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140821202000) do
 
   create_table "jobs", force: true do |t|
     t.string   "company"
-    t.string   "location"
+    t.string   "location_id"
     t.date     "start_date"
     t.date     "end_date"
     t.string   "company_logo"
@@ -50,9 +51,27 @@ ActiveRecord::Schema.define(version: 20140821202000) do
     t.datetime "updated_at"
   end
 
+  create_table "location_types", force: true do |t|
+    t.string "name"
+    t.string "description"
+  end
+
+  create_table "locations", force: true do |t|
+    t.spatial "geom",             limit: {:srid=>4326, :type=>"point", :has_z=>true, :geographic=>true}
+    t.string  "address1"
+    t.string  "address2"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zip"
+    t.string  "country"
+    t.string  "name"
+    t.string  "description"
+    t.integer "location_type_id"
+  end
+
   create_table "schools", force: true do |t|
     t.string   "name"
-    t.string   "location"
+    t.string   "location_id"
     t.date     "start_date"
     t.date     "end_date"
     t.string   "date_note"

@@ -1,1 +1,2 @@
-var app = angular.module("MyResume", [])
+var app = angular.module("MyResume", ['angularMapbox'])
+
