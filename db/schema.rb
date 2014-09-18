@@ -31,6 +31,30 @@ ActiveRecord::Schema.define(version: 20140916012457) do
     t.datetime "updated_at"
   end
 
+  create_table "categories", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
+
+  create_table "cities", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["name"], :name => "index_cities_on_name", :unique => true
+
+  create_table "countries", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "countries", ["name"], :name => "index_countries_on_name", :unique => true
+
   create_table "expertise_areas", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -69,6 +93,50 @@ ActiveRecord::Schema.define(version: 20140916012457) do
     t.integer "location_type_id"
   end
 
+  create_table "my_map_photos", force: true do |t|
+    t.integer  "my_map_id",   null: false
+    t.integer  "photo_id",    null: false
+    t.integer  "order",       null: false
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "my_maps", force: true do |t|
+    t.integer  "user_id",                        null: false
+    t.string   "name",                           null: false
+    t.text     "description"
+    t.boolean  "is_public",      default: false
+    t.string   "public_url_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photo_tags", force: true do |t|
+    t.integer  "tag_id",     null: false
+    t.integer  "photo_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", force: true do |t|
+    t.spatial  "geom",          limit: {:srid=>4326, :type=>"point", :has_z=>true, :geographic=>true}
+    t.float    "direction"
+    t.integer  "user_id",                                                                                               null: false
+    t.boolean  "is_public",                                                                            default: false
+    t.string   "name"
+    t.text     "description",                                                                          default: "none"
+    t.text     "placename"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.integer  "country_id"
+    t.string   "image",                                                                                                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.time     "original_date"
+  end
+
   create_table "schools", force: true do |t|
     t.string   "name"
     t.string   "location_id"
@@ -96,5 +164,42 @@ ActiveRecord::Schema.define(version: 20140916012457) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "states", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "states", ["name"], :name => "index_states_on_name", :unique => true
+
+  create_table "tags", force: true do |t|
+    t.string   "name",        null: false
+    t.integer  "category_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "is_admin"
+    t.string   "username"
+    t.string   "image"
+    t.integer  "phone_number"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

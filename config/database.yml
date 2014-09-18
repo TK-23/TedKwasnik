@@ -1,10 +1,12 @@
 development:
-  adapter: postgis
-  encoding: utf8
-  database: TedKwasnik_development
-  pool: 5
-  username:
-  password:
+    adapter: postgis
+    encoding: unicode
+    database: <%= ENV["RDS_DB_NAME"] %>
+    username: <%= ENV["RDS_USERNAME"] %>
+    password: <%= ENV["RDS_PASSWORD"] %>
+    host: <%= ENV["RDS_HOSTNAME"] %>
+    port: <%= ENV["RDS_PORT"] %>
+    pool: 5
 
 test:
   adapter: postgis
@@ -15,9 +17,11 @@ test:
   password:
 
 production:
-  adapter: postgis
-  encoding: utf8
-  database: TedKwasnik_production
-  pool: 5
-  username:
-  password:
+    adapter: postgis
+    encoding: unicode
+    database: <%= ENV["RDS_DB_NAME"] %>
+    username: <%= ENV["RDS_USERNAME"] %>
+    password: <%= ENV["RDS_PASSWORD"] %>
+    host: <%= ENV["RDS_HOSTNAME"] %>
+    port: <%= ENV["RDS_PORT"] %>
+    pool: 5
