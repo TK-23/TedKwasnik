@@ -80,6 +80,10 @@
   font-weight: normal;
 }
 
+.inline {
+  display: inline-block;
+}
+
 img {
   width: 100%;
 }

@@ -273,6 +273,7 @@ SkillSpecific.create([
   {skill_id: 5, description: "HTML & CSS"},
   {skill_id: 5, description: "Javascript"},
   {skill_id: 5, description: "jQuery"},
+  {skill_id: 5, description: "Angular.js"},
   {skill_id: 5, description: "Bootstrap"},
   {skill_id: 5, description: "Foundation"},
   {skill_id: 4, description:  "Postgresql"},
