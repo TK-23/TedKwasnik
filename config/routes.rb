@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :resume,  only: [:index]
+  resources :thesis,  only: [:index]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
