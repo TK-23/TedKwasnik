@@ -67,6 +67,10 @@
   font-family: 'Patua One', cursive;
 }
 
+.sans_serif_font {
+  font-family: 'News Cycle', sans-serif;
+}
+
 .right {
   float: right;
 }
@@ -98,5 +102,12 @@ h1, h2, h3, h4, h5, h6 {
   display: inline;
 }
 
+.download {
+  background: rgb(200,200,200);
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 1em;
+}
 
 
