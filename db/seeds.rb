@@ -127,7 +127,7 @@ School.create([{
   end_date: "2009/05/01",
   degree: "Joint B.A. in Environmental Studies and Geography, French minor",
   status: "Full-time",
-  additional_info: "Senior Thesis: <a href=\"/thesis\">The Grocery Gap: Examining Food Access in US Cities</a>",
+  additional_info: "Senior Thesis: <a href=\"/thesis\" target=\"_blank\">The Grocery Gap: Examining Food Access in US Cities</a>",
   image_path: "https://s3-us-west-2.amazonaws.com/tedkwasnik/images/middlebury_logo.png" },
 
   {
